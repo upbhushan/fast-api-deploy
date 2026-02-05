@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend</title>
+</head>
+<body>
+
+<h1>Frontend Connected to Backend</h1>
+
+<button onclick="callBackend()">Call Backend</button>
+
+<p id="result"></p>
+
+<script>
+function callBackend(){
+    fetch("https://fast-api-deploy-s1kx.onrender.com/hello")
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("result").innerText = data.message;
+    })
+}
+</script>
+
+</body>
+</html>
